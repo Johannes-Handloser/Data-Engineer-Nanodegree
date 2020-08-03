@@ -1,0 +1,873 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%md \n# Project Title\n### Data Engineering Capstone Project\n\n#### Project Summary\n--describe your project at a high level--\n\nThe project follows the follow steps:\n* Step 1: Scope the Project and Gather Data\n* Step 2: Explore and Assess the Data\n* Step 3: Define the Data Model\n* Step 4: Run ETL to Model the Data\n* Step 5: Complete Project Write Up",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:20:12+0000",
+      "config": {
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/text",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>Project Title</h1>\n<h3>Data Engineering Capstone Project</h3>\n<h4>Project Summary</h4>\n<p>&ndash;describe your project at a high level&ndash;</p>\n<p>The project follows the follow steps:</p>\n<ul>\n<li>Step 1: Scope the Project and Gather Data</li>\n<li>Step 2: Explore and Assess the Data</li>\n<li>Step 3: Define the Data Model</li>\n<li>Step 4: Run ETL to Model the Data</li>\n<li>Step 5: Complete Project Write Up</li>\n</ul>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464442_-1418683810",
+      "id": "paragraph_1595501840936_523033198",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:2196",
+      "dateFinished": "2020-07-24T16:20:12+0000",
+      "dateStarted": "2020-07-24T16:20:12+0000"
+    },
+    {
+      "title": "Initialization: Setup utilities",
+      "text": "%spark\n// imports come here\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:05:10+0000",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "editorHide": false,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import com.bmw.ad.data.layer.datasource.implicits._\nimport com.bmw.ad.decode.decoder.SomeIpDecoder\nimport com.bmw.ad.decode.data.io.DecoderConfiguration\nimport com.bmw.ad.common.car.configuration.CarConfiguration\nimport com.bmw.ad.common.car.configuration.CarConfiguration._\nimport com.bmw.ad.common.car.bus.Bordnet\nimport com.bmw.ad.signal.extractor.core.Extract\nimport com.bmw.ad.signal.extractor.commons.ExtractionConf\nimport com.bmw.ad.signal.extractor.commons.signals._\nimport com.bmw.ad.signal.extractor.core.data.someip.SomeIpSourceLogic\nimport com.bmw.ad.signal.extractor.core.data.can.CanSourceLogic\nimport pureconfig.ConfigSource\n\u001b[1m\u001b[34mbordnet\u001b[0m: \u001b[1m\u001b[32mcom.bmw.ad.common.car.bus.Bordnet\u001b[0m = Bordnet(I020-21-07-340,I020-21-07-350)\n\u001b[1m\u001b[34mcarConfig\u001b[0m: \u001b[1m\u001b[32mcom.bmw.ad.com..."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464444_1366645984",
+      "id": "paragraph_1595421684881_-1999722494",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "READY",
+      "$$hashKey": "object:2197"
+    },
+    {
+      "text": "%md\n## Input\nIn the next paragraph please enter the required information for the wanted data to be extracted.\n\n- ***Data path:*** <br>Path to the mounted data (ex. ```/usr/local/data/```)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:20:48+0000",
+      "config": {
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/text",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>Input</h2>\n<p>In the next paragraph please enter the required information for the wanted data to be extracted.</p>\n<ul>\n<li><em><strong>Data path:</strong></em> <br>Path to the mounted data (ex. <code>/usr/local/data/</code>)</li>\n</ul>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464445_-148321649",
+      "id": "paragraph_1595502627016_-477521730",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:2198",
+      "dateFinished": "2020-07-24T16:20:48+0000",
+      "dateStarted": "2020-07-24T16:20:48+0000"
+    },
+    {
+      "text": "%spark\nz.put(\"dataPath\", z.textbox(\"Data Path\").toString)\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:08:54+0000",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "editorHide": false,
+        "runOnSelectionChange": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {
+          "MDF4 folder path": "/usr/local/data/",
+          "SomeIP": "(21809, 32771)",
+          "Reprocessed DLT": "",
+          "Can": "",
+          "Novatel": "",
+          "RT3000/RTRange": "",
+          "Ibeo": [],
+          "Data Path": "/usr/local/data/"
+        },
+        "forms": {
+          "Data Path": {
+            "type": "TextBox",
+            "name": "Data Path",
+            "displayName": "Data Path",
+            "defaultValue": "",
+            "hidden": false,
+            "$$hashKey": "object:4071"
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464445_-134758755",
+      "id": "paragraph_1595502669474_168888759",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:2199",
+      "dateFinished": "2020-07-24T16:08:55+0000",
+      "dateStarted": "2020-07-24T16:08:54+0000"
+    },
+    {
+      "text": "%md\n### Step 1: Scope the Project and Gather Data\n\n#### Scope \nExplain what you plan to do in the project in more detail. What data do you use? What is your end solution look like? What tools did you use? etc>\n\n#### Describe and Gather Data \nDescribe the data sets you're using. Where did it come from? What type of information is included? ",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:20:54+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595607218265_-205467893",
+      "id": "paragraph_1595607218265_-205467893",
+      "dateCreated": "2020-07-24T16:13:38+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:4178",
+      "dateFinished": "2020-07-24T16:20:54+0000",
+      "dateStarted": "2020-07-24T16:20:54+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h3>Step 1: Scope the Project and Gather Data</h3>\n<h4>Scope</h4>\n<p>Explain what you plan to do in the project in more detail. What data do you use? What is your end solution look like? What tools did you use? etc&gt;</p>\n<h4>Describe and Gather Data</h4>\n<p>Describe the data sets you&rsquo;re using. Where did it come from? What type of information is included?</p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md \n## Exploration\nAfter filling the wanted signals above please first run ___2. Load Data___ below.\n- By running ___3. Message Statistics___ you can see the distribution of selected signals.\n- By running ___4. Sample Messages___ you will recieve a random sample from each of the selected message.\n- By running ___5. Preview of resulting signal narrow tables___ you will recieve a preview of the calculated signal narrow table.",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:01:04+0000",
+      "config": {
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/text",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>Exploration</h2>\n<p>After filling the wanted signals above please first run <em><strong>2. Load Data</strong></em> below.</p>\n<ul>\n<li>By running <em><strong>3. Message Statistics</strong></em> you can see the distribution of selected signals.</li>\n<li>By running <em><strong>4. Sample Messages</strong></em> you will recieve a random sample from each of the selected message.</li>\n<li>By running <em><strong>5. Preview of resulting signal narrow tables</strong></em> you will recieve a preview of the calculated signal narrow table.</li>\n</ul>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464445_-1518994636",
+      "id": "paragraph_1595502907163_1304779140",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "READY",
+      "$$hashKey": "object:2200"
+    },
+    {
+      "title": "1. Load data",
+      "text": "%spark\nimplicit val s = spark\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:20:12+0000",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "editorHide": false,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34ms\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.SparkSession\u001b[0m = org.apache.spark.sql.SparkSession@68bb0b98\n\u001b[1m\u001b[34msomeIpServiceAndEventIds\u001b[0m: \u001b[1m\u001b[32mSeq[(Int, Int)]\u001b[0m = ArrayBuffer((21809,32771))\n\u001b[1m\u001b[34mreprocessedDlt\u001b[0m: \u001b[1m\u001b[32mSeq[Int]\u001b[0m = WrappedArray()\n\u001b[1m\u001b[34mcanBusAndCanIds\u001b[0m: \u001b[1m\u001b[32mSeq[(Long, Int)]\u001b[0m = ArrayBuffer()\n\u001b[1m\u001b[34mloadIbeo\u001b[0m: \u001b[1m\u001b[32mBoolean\u001b[0m = false\n\u001b[1m\u001b[34mnovatelMessageNames\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m = WrappedArray()\n\u001b[1m\u001b[34mrtMessageNames\u001b[0m: \u001b[1m\u001b[32mSeq[String]\u001b[0m = WrappedArray()\n\u001b[1m\u001b[34mdecoded\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [loggerTimestamp: bigint, bdcTimestamp: bigint ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464445_204338309",
+      "id": "paragraph_1595503153012_-1569537915",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "READY",
+      "$$hashKey": "object:2201"
+    },
+    {
+      "text": "%md\n### Step 2: Explore and Assess the Data\n#### Explore the Data \nIdentify data quality issues, like missing values, duplicate data, etc.\n\n#### Cleaning Steps\nDocument steps necessary to clean the data",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:21:01+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595607255939_-1631597542",
+      "id": "paragraph_1595607255939_-1631597542",
+      "dateCreated": "2020-07-24T16:14:15+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:4247",
+      "dateFinished": "2020-07-24T16:21:01+0000",
+      "dateStarted": "2020-07-24T16:21:01+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h3>Step 2: Explore and Assess the Data</h3>\n<h4>Explore the Data</h4>\n<p>Identify data quality issues, like missing values, duplicate data, etc.</p>\n<h4>Cleaning Steps</h4>\n<p>Document steps necessary to clean the data</p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "title": "2. Message Statistics",
+      "text": "%spark\nz.show(decoded.groupBy('sourceType, 'id).agg(count(lit(1)).alias(\"count\"), min(from_unixtime('loggerTimestamp / lit(1e+9))).alias(\"minTimestamp\"), max(from_unixtime('loggerTimestamp / lit(1e+9))).alias(\"maxTimestamp\")))",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:19:26+0000",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "editorHide": false,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "sourceType": "string",
+                      "id": "string",
+                      "count": "string",
+                      "minTimestamp": "string",
+                      "maxTimestamp": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "sourceType\tid\tcount\tminTimestamp\tmaxTimestamp\nsome-ip\t{\"serviceId\": 21809, \"eventId\": 32771}\t2\t2017-07-27 12:04:26\t2017-07-27 12:04:26\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464446_63171221",
+      "id": "paragraph_1595503833367_-1819161829",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "READY",
+      "$$hashKey": "object:2202"
+    },
+    {
+      "title": "2. Sample messages",
+      "text": "%spark\nprintln(s\"%table Source type\\tID\\tJson\")\nsomeIpServiceAndEventIds.foreach{ case (serviceId, eventId) => \n    decoded.where(('sourceType === \"some-ip\") and ('id === SomeIpSourceLogic.jsonId(serviceId, eventId))).select('value).take(1).headOption.map(row => \n        println(s\"some-ip\\t${SomeIpSourceLogic.jsonId(serviceId, eventId)}\\t\" + row.getString(0))\n    )\n}\n\nreprocessedDlt.foreach(dltMessageId =>\n    decoded.where(('sourceType === \"dlt\") and ('id === dltMessageId)).select('value).take(1).headOption.map(row => \n        println(s\"dlt\\t$dltMessageId\\t\" + row.getString(0))\n    )\n)\n\ncanBusAndCanIds.foreach{ case (busId,canId) =>\n    decoded.where(('sourceType === \"can\") and ('id === CanSourceLogic.jsonId(busId.toInt, canId))).select('value).take(1).headOption.map(row => \n        println(s\"can\\t${CanSourceLogic.jsonId(busId.toInt, canId)}\\t\" + row.getString(0))\n    )\n}\n\nPartialFunction.condOpt(()) { case x if loadIbeo=> x }.foreach { _ => \n    decoded.where('sourceType === \"ibeo\").select('value).take(1).headOption.map(row => \n        println(s\"ibeo\\tibeoMessage\\t\" + row.getString(0))\n    )\n}\n\nnovatelMessageNames.foreach(novatelMessage =>\n    decoded.where(('sourceType === \"novatel\") and ('id === novatelMessage)).select('value).take(1).headOption.map(row =>\n        println(s\"novatel\\t$novatelMessage\\t\" + row.getString(0))\n    )\n)\n\nrtMessageNames.foreach(rtMessage =>\n    decoded.where(('sourceType === \"rt3000\") and ('id === rtMessage)).select('value).take(1).headOption.map(row =>\n        println(s\"rt3000\\trtMessage\\t\" + row.getString(0))\n    )\n)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:19:13+0000",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Source type": "string",
+                      "ID": "string",
+                      "Json": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Source type\tID\tJson\nsome-ip\t{\"serviceId\": 21809, \"eventId\": 32771}\t{\"intensityRain\":2.5,\"speedWiper\":35.0,\"statusRainSensor\":0}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464446_-2114582262",
+      "id": "paragraph_1595503900688_1545459452",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "READY",
+      "$$hashKey": "object:2203"
+    },
+    {
+      "text": "%md\n### Step 3: Define the Data Model\n#### 3.1 Conceptual Data Model\nMap out the conceptual data model and explain why you chose that model\n\n#### 3.2 Mapping Out Data Pipelines\nList the steps necessary to pipeline the data into the chosen data model\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:21:05+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595607437265_-950799884",
+      "id": "paragraph_1595607437265_-950799884",
+      "dateCreated": "2020-07-24T16:17:17+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:4525",
+      "dateFinished": "2020-07-24T16:21:05+0000",
+      "dateStarted": "2020-07-24T16:21:05+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h3>Step 3: Define the Data Model</h3>\n<h4>3.1 Conceptual Data Model</h4>\n<p>Map out the conceptual data model and explain why you chose that model</p>\n<h4>3.2 Mapping Out Data Pipelines</h4>\n<p>List the steps necessary to pipeline the data into the chosen data model</p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:17:30+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595607450557_377609313",
+      "id": "paragraph_1595607450557_377609313",
+      "dateCreated": "2020-07-24T16:17:30+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:4594"
+    },
+    {
+      "text": "%md\n### Step 4: Run Pipelines to Model the Data \n#### 4.1 Create the data model\nBuild the data pipelines to create the data model.",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:21:08+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595607416965_-1389820875",
+      "id": "paragraph_1595607416965_-1389820875",
+      "dateCreated": "2020-07-24T16:16:56+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:4456",
+      "dateFinished": "2020-07-24T16:21:08+0000",
+      "dateStarted": "2020-07-24T16:21:08+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h3>Step 4: Run Pipelines to Model the Data</h3>\n<h4>4.1 Create the data model</h4>\n<p>Build the data pipelines to create the data model.</p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md\n#### 4.2 Data Quality Checks\nExplain the data quality checks you'll perform to ensure the pipeline ran as expected. These could include:\n * Integrity constraints on the relational database (e.g., unique key, data type, etc.)\n * Unit tests for the scripts to ensure they are doing the right thing\n * Source/Count checks to ensure completeness\n \nRun Quality Checks",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:21:10+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595607361884_216837679",
+      "id": "paragraph_1595607361884_216837679",
+      "dateCreated": "2020-07-24T16:16:01+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:4385",
+      "dateFinished": "2020-07-24T16:21:10+0000",
+      "dateStarted": "2020-07-24T16:21:10+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h4>4.2 Data Quality Checks</h4>\n<p>Explain the data quality checks you&rsquo;ll perform to ensure the pipeline ran as expected. These could include:</p>\n<ul>\n<li>Integrity constraints on the relational database (e.g., unique key, data type, etc.)</li>\n<li>Unit tests for the scripts to ensure they are doing the right thing</li>\n<li>Source/Count checks to ensure completeness</li>\n</ul>\n<p>Run Quality Checks</p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:18:18+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595607498855_2060717511",
+      "id": "paragraph_1595607498855_2060717511",
+      "dateCreated": "2020-07-24T16:18:18+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:4666"
+    },
+    {
+      "text": "%md\n#### Step 5: Complete Project Write Up\n* Clearly state the rationale for the choice of tools and technologies for the project.\n* Propose how often the data should be updated and why.\n* Write a description of how you would approach the problem differently under the following scenarios:\n * The data was increased by 100x.\n * The data populates a dashboard that must be updated on a daily basis by 7am every day.\n * The database needed to be accessed by 100+ people.",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:21:14+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595607312703_-1832331847",
+      "id": "paragraph_1595607312703_-1832331847",
+      "dateCreated": "2020-07-24T16:15:12+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:4316",
+      "dateFinished": "2020-07-24T16:21:14+0000",
+      "dateStarted": "2020-07-24T16:21:14+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h4>Step 5: Complete Project Write Up</h4>\n<ul>\n<li>Clearly state the rationale for the choice of tools and technologies for the project.</li>\n<li>Propose how often the data should be updated and why.</li>\n<li>Write a description of how you would approach the problem differently under the following scenarios:</li>\n<li>The data was increased by 100x.</li>\n<li>The data populates a dashboard that must be updated on a daily basis by 7am every day.</li>\n<li>The database needed to be accessed by 100+ people.</li>\n</ul>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md\n## Store Dataframe as parquet file\n- By running ___1. Define output path location___ after defining a proper output path (make sure the path was mounted when running the Docker Container).\n- By running ___2. Store Dataframe as Parquet File___ the parquet file ___extracted_signals.parquet___ gets stored underneath previously defined path",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:01:04+0000",
+      "config": {
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/text",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>Store Dataframe as parquet file</h2>\n<ul>\n<li>By running <em><strong>1. Define output path location</strong></em> after defining a proper output path (make sure the path was mounted when running the Docker Container).</li>\n<li>By running <em><strong>2. Store Dataframe as Parquet File</strong></em> the parquet file <em><strong>extracted_signals.parquet</strong></em> gets stored underneath previously defined path</li>\n</ul>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464446_1719779889",
+      "id": "paragraph_1595511377274_-498945735",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "READY",
+      "$$hashKey": "object:2205"
+    },
+    {
+      "title": "Define output path location",
+      "text": "%spark\nz.put(\"parquetPath\", z.textbox(\"Parquet output path\").toString)",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:19:33+0000",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {
+          "Parquet output path": ""
+        },
+        "forms": {
+          "Parquet output path": {
+            "type": "TextBox",
+            "name": "Parquet output path",
+            "displayName": "Parquet output path",
+            "defaultValue": "",
+            "hidden": false,
+            "$$hashKey": "object:4770"
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464446_-1151685667",
+      "id": "paragraph_1595504572101_1961767686",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "READY",
+      "$$hashKey": "object:2206"
+    },
+    {
+      "title": "Store resulting Dataframe as Parquet File",
+      "text": "%spark\nval outputPath = z.get(\"parquetPath\").asInstanceOf[String]\ndecoded.write.parquet(outputPath + \"/\" + \"extracted_signals.parquet\")",
+      "user": "anonymous",
+      "dateUpdated": "2020-07-24T16:19:42+0000",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34moutputPath\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = /var/output\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1595606464447_-1650189555",
+      "id": "paragraph_1595511210925_1614602073",
+      "dateCreated": "2020-07-24T16:01:04+0000",
+      "status": "READY",
+      "$$hashKey": "object:2207"
+    }
+  ],
+  "name": "Capstone DEND Project",
+  "id": "2FEPXCTRA",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-preview1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Capstone DEND Project"
+}

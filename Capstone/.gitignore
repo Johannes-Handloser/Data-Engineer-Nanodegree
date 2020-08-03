@@ -1,0 +1,11 @@
+# ide
+.idea
+*.iml
+*~
+target
+
+# Mac OS X
+.DS_Store
+
+# Large Data folder
+data
