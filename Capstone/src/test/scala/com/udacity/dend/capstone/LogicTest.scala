@@ -28,4 +28,14 @@ class LogicTest extends FlatSpec with SparkSpec with Matchers {
     df.count() should be (10)
   }
 
+  it should "return list of tuples with certain port city tuple as head" in {
+    val inputPath = getClass.getResource("/I94_SAS_Labels_Descriptions.SAS").getPath
+    Logic.toCityPortList(inputPath).head should be ("ALC","alcan")
+  }
+
+  it should "find San Francisco port for city name in List of tuples" in {
+    val inputPath = getClass.getResource("/I94_SAS_Labels_Descriptions.SAS").getPath
+    val portCityList = Logic.toCityPortList(inputPath)
+    portCityList.find(_._2 == "san francisco").get._1 should be ("SFR")
+  }
 }

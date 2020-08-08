@@ -11,7 +11,7 @@ object Extract {
    * @param colsToDropDuplicatesAndNulls - list of columns to drop duplicate rows and null values from
    * @param loadDataFrame - Function to load File to DataFrame
    * @param spark - SparkSession
-   * @return
+   * @return DataFrame which all provided methods are executed on
    */
   def apply(
            inputPath: String,
